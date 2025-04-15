@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+    background: url('https://lh3.googleusercontent.com/p/AF1QipPTNsrgwNnMakChn3u1ID6yhfnSS1RGWSwO5yGz=s680-w680-h510') no-repeat center center;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Camada de sobreposição para escurecer o fundo */
+table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Cor preta com 30% de opacidade */
+    z-index: 1; /* Coloca a sobreposição acima do fundo, mas abaixo do conteúdo */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo da tabela fique acima da sobreposição */
+}
+
+th {
+    background-color: rgba(242, 242, 242, 0.9);
+}
+
+select, input {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
