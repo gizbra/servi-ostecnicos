@@ -87,7 +87,7 @@
     </table>
 
     <script>
-        const tecnicos = ["Selecionar","Emerson", "Nicolas", "Pedro", "Caio", "Luciano", "Edson", "Renato", "Jorge"];
+        const tecnicos = ["Selecionar","Emerson", "Nicolas", "Gildo", "Caio", "Luciano", "Edson", "Renato", "Jorge"];
         const ordens = ["Selecionar","Reparo", "Instalação", "Migração", "Troca de Equipamento", "Vistoria", "Implementação", "Recolhimento", "Troca de Endereço", "Mudança de Titularidade"];
         const bairros = ["Selecionar","Centro", "Santa Teresa", "São Cristóvão", "Maracanã", "Tijuca", "Rio Comprido", "Vila Isabel"];
 
@@ -122,7 +122,8 @@
                     <td><input type="text" class="id-cliente"></td>
                     <td><select class="ordem">${ordens.map(o => `<option>${o}</option>`).join('')}</select></td>
                     <td><select class="bairro">${bairros.map(b => `<option>${b}</option>`).join('')}</select></td>
-                    <td><select class="tecnico">${tecnicos.map(t => `<option>${t}</option>`).join('')}</select></td>
+                    <td><select class="tecnico" multiple>${tecnicos.map(t => `<option value="${t}">${t}</option>`).join('')}</select></td>
+
                     <td>
                         <select class="realizado">
                             <option value="Sim">Sim</option>
@@ -149,7 +150,7 @@
                     idCliente: row.querySelector(".id-cliente").value,
                     ordem: row.querySelector(".ordem").value,
                     bairro: row.querySelector(".bairro").value,
-                    tecnico: row.querySelector(".tecnico").value,
+                    tecnico: Array.from(row.querySelector(".tecnico").selectedOptions).map(opt => opt.value),
                     realizado: row.querySelector(".realizado").value,
                     motivo: row.querySelector(".motivo").value
                 };
@@ -176,7 +177,8 @@
                     <td><input type="text" class="id-cliente" value="${dados.idCliente}"></td>
                     <td><select class="ordem">${ordens.map(o => `<option${o === dados.ordem ? ' selected' : ''}>${o}</option>`).join('')}</select></td>
                     <td><select class="bairro">${bairros.map(b => `<option${b === dados.bairro ? ' selected' : ''}>${b}</option>`).join('')}</select></td>
-                    <td><select class="tecnico">${tecnicos.map(t => `<option${t === dados.tecnico ? ' selected' : ''}>${t}</option>`).join('')}</select></td>
+                    <td><select class="tecnico" multiple>${tecnicos.map(t => `<option value="${t}" ${dados.tecnico.includes(t) ? 'selected' : ''}>${t}</option>`).join('')}</select></td>
+
                     <td>
                         <select class="realizado">
                             <option value="Sim" ${dados.realizado === "Sim" ? "selected" : ""}>Sim</option>
