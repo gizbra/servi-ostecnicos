@@ -9,7 +9,9 @@ table {
     width: 100%;
     border-collapse: collapse;
     position: relative;
-    background: url('https://lh3.googleusercontent.com/p/AF1QipPTNsrgwNnMakChn3u1ID6yhfnSS1RGWSwO5yGz=s680-w680-h510') no-repeat center center;
+    /* A imagem de fundo (logo) é fictícia e serve como exemplo.
+  Altere a URL para a logo oficial do provedor */
+    background: url('https://st2.depositphotos.com/42585882/42219/i/450/depositphotos_422190474-stock-photo-unique-logo-design-shape.jpg') no-repeat center center;
     background-size: contain;
     background-position: center;
 }
@@ -22,8 +24,8 @@ table::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Cor preta com 30% de opacidade */
-    z-index: 1; /* Coloca a sobreposição acima do fundo, mas abaixo do conteúdo */
+    background-color: rgba(0, 0, 0, 0.3); /* Cor prata com 30% de opacidade */
+    z-index: 1; /*Sobreposição acima do fundo, mas abaixo do conteúdo */
 }
 
 th, td {
@@ -32,7 +34,7 @@ th, td {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     position: relative;
-    z-index: 2; /* Garante que o conteúdo da tabela fique acima da sobreposição */
+    z-index: 2; /* Garante que o conteúdo fique acima da sobreposição */
 }
 
 th {
